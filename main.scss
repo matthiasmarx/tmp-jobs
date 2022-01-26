@@ -1,0 +1,515 @@
+@import '_variables';
+
+html body {
+    // Fonts
+    font-family: $fontFamily;
+    color: $textColor; 
+    font-weight: $textFontWeight;
+    font-size: $textSize;
+    line-height: $textLineHeight;
+    text-align: $textAlign;
+
+    // Others
+    background: linear-gradient(0deg, $bodyBg, $bodyBg), $bodyBgImg;
+    background-size: cover; 
+    background-position: center center; 
+
+
+}
+body {
+    h1,h2,h3,h4,h5,h6 {
+        color: $headlineColor;
+        font-weight: $headlineFontWeight;
+        line-height: $headlineLineHeight; 
+        text-align: $headlineTextAlign;
+        font-family: $fontFamilyHeadlines;
+    }
+}
+
+body a {
+    color: $accentColor;
+}
+
+h1 { font-size: $headlineSize; }
+h2 { font-size: calc(0.8 * #{$headlineSize});}
+h3 { font-size: calc(0.7 * #{$headlineSize});}
+h4 { font-size: calc(0.6 * #{$headlineSize});}
+h5 { font-size: calc(0.5 * #{$headlineSize});}
+h6 { font-size: calc(0.4 * #{$headlineSize});}
+
+
+// Header
+#main-header {
+    background: $headerBg;
+    color: $headerColor;
+
+    // Logo
+    #logo-wrapper a {
+        display: block;
+        img {
+            display: block;
+            max-width: 300px;
+            max-height: 80px;
+        }
+    }
+
+
+    // Progress Bar
+    #progress-bar {
+        height: 5px; 
+        width: 100%; 
+        background: $progressBarBg;
+
+        #progress-bar-step {
+            background-color: $progressBarSuccessBg;
+            height: 100%;
+            transition: ease all 400ms; 
+        }
+    }
+
+
+}
+
+// Main Content
+#main-content {
+    min-height: calc(100vh - 140px);
+}
+
+
+
+// Footer
+#main-footer {
+    background: $footerBg;
+    color: $footerColor;
+    .footer-nav {
+        margin-left: auto; 
+        ul {
+            margin:0; 
+            padding: 0; 
+            display: flex; 
+            flex-wrap: wrap; 
+            list-style: none;
+            text-align: right; 
+            align-items: center;
+            justify-content: flex-end;
+
+            li {
+                padding-left: 15px; 
+                a {
+                    color: $textColor;
+                    opacity: .5; 
+                    font-style: italic; 
+                    transition: ease color 300ms;
+                
+                    &:hover {
+                        opacity: 1; 
+                        color: $accentColor;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+// Template Inner Sections
+body .ct-section-inner-wrap,
+body #main-header > .ct-section-inner-wrap .inner-max-width {
+    padding-left: $outerSpace;
+    padding-right: $outerSpace;
+
+}
+
+body .ct-section-inner-wrap, 
+body .oxy-header-container,
+body .inner-max-width {
+    max-width: $maxContentWidth;
+}
+
+
+
+
+.fluentform .frm-fluent-form, #question-wrapper {
+    .fluentform-step {
+        // Hide * for required fields
+        .ff-el-input--label.ff-el-is-required.asterisk-right label:after {
+            display: none; 
+        }
+
+        // Checkboxen & Radios Recruiting Styled
+        .ff-el-group:not(.normal) {
+            .ff-el-form-check-label input[type="radio"],
+            .ff-el-form-check-label input[type="checkbox"] { 
+                display: none;
+                ~ span {
+                    cursor: pointer; 
+                    padding: $checkboxPadding;
+                    background-color: $checkboxBg;
+                    border: $checkboxBorderWidth $checkboxBorderStyle $checkboxBorderColor;
+                    color: $checkboxColor;
+                    display: flex;
+                    margin-bottom: $fieldMarginBtm;
+                    text-align: $checkboxTextAlign;
+                    align-items: $checkboxTextAlign;
+                    justify-content: $checkboxTextAlign;
+                    font-size: $checkboxTextSize;
+                    font-weight: $textFontWeight;
+                    transition: ease all 400ms;
+                    border-radius: $fieldBorderRadius;
+                    min-height: $fieldMinHeight;
+                }
+                &:checked ~ span {
+                    color: $checkboxActiveColor;
+                    background: $checkboxActiveBg;
+                    border: $checkboxActiveBorderWidth $checkboxActiveBorderStyle $checkboxActiveBorderColor;
+                }
+            }
+        }
+        // Normal Checkboxes (DSGVO e.g.)
+        .ff-el-group.normal {
+            .ff-el-form-check-label input[type="radio"],
+            .ff-el-form-check-label input[type="checkbox"] { 
+                display: none;
+                ~ span { 
+                    position: relative;
+                    padding-left: 35px;
+                    &::before {
+                        content:""; 
+                        position: absolute; 
+                        left: 0; 
+                        top: 0; 
+                        width: 24px;
+                        height: 24px; 
+                        background: $checkboxDsgvoBg; 
+                        border: $checkboxDsgvoBorderStyle $checkboxDsgvoBorderColor $checkboxDsgvoBorderWidth;
+                    }
+                }
+                &:checked ~ span { 
+                    &::before {
+                        content:"\2714";
+                        display: flex; 
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 5px; 
+                        color: $inputFocusColor;
+                        border: $checkboxDsgvoActiveBorderColor $checkboxDsgvoActiveBorderStyle $checkboxDsgvoActiveBorderWidth;
+                        background: $checkboxDsgvoActiveColor;
+                    }
+                }
+            }
+        }
+    }
+    // If there is more than 1 job.
+    // First Select on first Page
+    button.job-select {
+        cursor: pointer; 
+        width: 100%; 
+        padding: $checkboxPadding;
+        background-color: $checkboxBg;
+        border: $checkboxBorderWidth $checkboxBorderStyle $checkboxBorderColor;
+        color: $checkboxColor;
+        display: flex;
+        margin-bottom: $fieldMarginBtm;
+        text-align: $checkboxTextAlign;
+        align-items: $checkboxTextAlign;
+        justify-content: $checkboxTextAlign;
+        font-size: $checkboxTextSize;
+        font-family: $fontFamily;
+        font-weight: $textFontWeight;
+        transition: ease all 400ms;
+        border-radius: $fieldBorderRadius;
+        min-height: $fieldMinHeight;
+        &:focus {
+            color: $checkboxActiveColor;
+            background: $checkboxActiveBg;
+            border: $checkboxActiveBorderWidth $checkboxActiveBorderStyle $checkboxActiveBorderColor;
+        }
+    }
+    // Headlines & Questions
+    .ff-el-input--label label, .is--headline {
+        display: block;
+        margin-bottom: calc(0.5 * #{$headlineSize});
+        font-size: $headlineSize;
+        font-weight: $headlineFontWeight;
+        color: $headlineColor;
+        line-height: $headlineLineHeight;
+        text-align: $headlineTextAlign;
+        font-family: $fontFamilyHeadlines;
+    }
+    .ff-el-group.is--headline p {
+        margin: 0; 
+    }
+
+    // Mini Info Text
+    .mini_info, .mini-info, .miniinfo, .infotext {
+        font-size: $hintTextSize;
+        color: $textColor;
+        opacity: $hintTextOpacity;
+        font-style: $hintTextStyle;
+        display: block; 
+    }
+
+    // Input Fields
+    .ff-el-form-control {
+        font-family: $fontFamily;
+        display: block;
+        width: 100%;
+        min-height: $fieldMinHeight;
+        padding: $inputPadding;
+        font-size: $inputTextSize;
+        font-weight: $textFontWeight;
+        text-align: $inputTextAlign;
+        line-height: $inputTextLineHeight;
+        color: $inputColor;
+        background-color: $inputBg;
+        border: $inputBorderStyle $inputBorderColor $inputBorderWidth;
+        border-radius: $fieldBorderRadius;
+        transition: ease all 400ms;
+
+        &:focus {
+            background-color: $inputFocusBg;
+            color: $inputFocusColor;
+            border: $inputFocusBorderColor $inputFocusBorderStyle $inputFocusBorderWidth;
+        }
+        &::placeholder {
+            color: $inputColor;
+            opacity: .2;
+            font-size: $inputTextSize;
+        }
+    }
+    .ff-el-group {
+        margin-bottom: $fieldMarginBtm;
+    }
+
+    button.ff-btn {
+        font-family: $fontFamily;
+        transition: ease all 400ms;
+    }
+    // Weiter Button
+    button.ff-btn.ff-btn-next,
+    button.ff-btn.ff-btn-submit {
+        width: 100%;
+    }
+    button.ff-btn.ff-btn-next,
+    button.ff-btn.ff-btn-submit, 
+    .main-btn-recruiting {
+        background-color: $btnBg;
+        border: $btnBorderColor $btnBorderStyle $btnBorderWidth;
+        color: $btnColor;
+        padding: $btnPadding;
+        text-align: $btnTextAlign;
+        font-size: $btnTextSize;
+        font-weight: $btnTextFontWeight;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: $fieldMinHeight;
+        border-radius: $fieldBorderRadius;
+        cursor: pointer;
+        transition: ease all 400ms;
+        &:hover {
+            background-color: $btnHoverBg;
+            color: $btnHoverColor;
+            border: $btnHoverBorderColor $btnHoverBorderStyle $btnHoverBorderWidth;
+        }
+    }
+    // Zurück Button
+    button.ff-btn.ff-btn-prev {
+        background-color: transparent;
+        border: 0; 
+        color: $textColor;
+        opacity: .7;
+        text-align: $btnTextAlign;
+        font-style: italic;
+        font-weight: 300;
+        text-decoration: underline;
+        width: 100%;
+        display: block;
+        padding: $btnPadding;
+        cursor: pointer;
+        transition: ease all 400ms;
+    }
+
+    .ff_btn_style:focus,
+    .ff_btn_style:hover {
+        opacity: 1;
+    }
+
+    // Weiter Zurück Button Alignment
+    .step-nav {
+        display: flex; 
+        flex-direction: column-reverse;
+    }
+    // Submit Wrapper 
+    .ff_submit_btn_wrapper {
+        margin-top: $fieldMarginBtm;
+    }
+    .ff-inner_submit_container  {
+        display: flex;
+        flex-direction: column-reverse;
+    
+        .ff-t-cell {
+            padding-left: 0; 
+        }
+    }
+}
+
+
+
+.ff-btn.main-btn-recruiting {
+    width: auto; 
+    background-color: $btnBg;
+    border: $btnBorderColor $btnBorderStyle $btnBorderWidth;
+    color: $btnColor;
+    padding: $btnPadding;
+    text-align: $btnTextAlign;
+    font-size: $textSize;
+    font-weight: $btnTextFontWeight;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $fieldBorderRadius;
+    cursor: pointer;
+    margin-left: 0; 
+    margin-right: auto;
+    transition: ease all 400ms;
+    &:hover {
+        background-color: $btnHoverBg;
+        color: $btnHoverColor;
+        border: $btnHoverBorderColor $btnHoverBorderStyle $btnHoverBorderWidth;
+    }
+}
+
+
+// Danke Seite
+// Passt leider nicht
+
+#passt-leider-nicht, #danke-fuer-bewerbung {
+    .inner-max-width {
+        padding-top: 50px; 
+        padding-bottom: 50px; 
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+}
+.danke-image, .passt-nicht-image {
+    max-height: 300px;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+// Rechtliches
+
+#rights-section {
+    background: $bodyImprBg;
+}
+
+#rights-headline {
+    color: $headlineImprColor;
+}
+
+#rights-text {
+        color: $textImprColor;
+        h1,h2,h3,h4,h5,h6 {
+            color: $headlineImprColor;
+            font-family: $fontFamilyHeadlines;
+        }
+}
+
+
+// Normal Content
+#content-wrapper {
+    ul li {
+        list-style: none;
+        position: relative;
+        &::before {
+            content:"\203A";
+            font-size: $textSize;
+            position: absolute;
+            left: calc(#{$textSize} * -1); 
+            top: calc(#{$textSize} / 2);
+            transform: translateY(-50%);
+            width: $textSize;
+            height: $textSize;
+            color: $textColor;
+            // background-image: url();
+            // background-position: center;
+            // background-repeat: no-repeat;
+            // background-size: contain; 
+        }
+    }
+}
+
+
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    width: 100%;
+    height: 100%;
+    display:none;
+    transition: ease all 400ms;
+    background: $accentColor;
+    .preloader-full-wrap {
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    .preloader-logo-wrap {
+        width: 200px; 
+        height: 200px;
+        background-color: $bodyBg;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        padding: 25px; 
+        border-radius: 100%; 
+        animation: logoLoadAnimBounce 3s ease  infinite forwards;
+        position: relative;
+        z-index: 4;
+        &::before {
+            content:"";
+            z-index: -1;
+            width: 100%; 
+            height: 100%;
+            position: absolute;
+            top: 0; 
+            left: 0;
+            border-radius: 100%; 
+            background-color: $bodyBg;
+            opacity: .2;
+            animation: logoLoadAnimBounce 2s cubic-bezier(0.47, -0.34, 0, 2.53) infinite backwards;
+            filter: blur(4px);
+        }
+    }
+    .preloader-logo {
+        max-width: 220px;
+        padding: 25px; 
+    }
+
+}
+
+@keyframes logoLoadAnimBounce {
+    0% {
+        transform: scale(1);
+    }
+    30% {
+        transform: scale(.9);
+    }
+    50% {
+        transform: scale(1);
+    }
+    70% {
+        transform: scale(.8);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

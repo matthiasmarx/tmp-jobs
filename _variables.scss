@@ -1,0 +1,121 @@
+/* Don't do any changes here. File is created with PHP in Plugin CustomScripts 
+ It will be overwritten. */ 
+
+/*Template*/ 
+$outerSpace:150px;
+$fontFamily:'Open Sans', sans-serif;
+$fontFamilyHeadlines:'Open Sans', sans-serif;
+$headerBg:#eeee22;
+$bodyBg:rgb(129,215,66);
+$bodyBgImg: url(transparent.png) ;
+$footerBg:#eaeaea;
+$accentColor:#dd3333;
+$textColor:#1e3042;
+$headlineColor:#1e3042;
+$headerColor:#1e3042;
+$footerColor:#1e3042;
+
+
+/*Template Font Fields */ 
+$headlineFontWeight:400;
+$headlineSize:150px;
+$headlineLineHeight:1.4;
+$headlineTextAlign:left;
+$textFontWeight:400;
+$textSize:20px;
+$textLineHeight:1.5;
+$textAlign:left;
+$hintTextSize:20px;
+$hintTextStyle:italic;
+$hintTextOpacity:0.5;
+
+
+/*Template -  Danke & Unpassend Seiten */ 
+$headlineThanksFontWeight:400;
+$headlineThanksSize:150px;
+$headlineThanksLineHeight:1.4;
+$headlineThanksTextAlign:left;
+$textThanksFontWeight:400;
+$textThanksSize:20px;
+$textThanksLineHeight:1.5;
+$textThanksAlign:left;
+
+
+/*Template -  Impressum & Datenschutz */ 
+$bodyImprBg:#a5a5a5;
+$textImprColor:#ffffff;
+$headlineImprColor:#ffffff;
+
+
+/*Template -  Progress Bar */ 
+$progressBarBg:rgba(30, 48, 66, .2);
+$progressBarSuccessBg:#dd3333;
+
+
+/*Formular Felder - General */ 
+$fieldMarginBtm:50px;
+$fieldMinHeight:120px;
+$fieldBorderRadius:25px;
+
+
+/*Formular Felder - Checkbox / Radiobox / Recruiting Choice */ 
+$checkboxBg:rgb(221,51,51);
+$checkboxActiveBg:rgb(221,153,51);
+$checkboxBorderStyle:solid;
+$checkboxBorderColor:#eeee22;
+$checkboxBorderWidth:2px;
+$checkboxActiveBorderStyle:solid;
+$checkboxActiveBorderColor:#dd9933;
+$checkboxActiveBorderWidth:2px;
+$checkboxColor:rgb(238,238,34);
+$checkboxActiveColor:rgb(221,51,51);
+$checkboxPadding:25px;
+$checkboxTextAlign:left;
+$checkboxTextSize: calc(20px * 1.5) ;
+$checkboxTextLineHeight:1.3;
+
+
+/* Formular Felder - Input / Textarea */ 
+$inputBg:#dd3333;
+$inputFocusBg:#f4f5f6;
+$inputBorderStyle:solid;
+$inputBorderColor:#dedede;
+$inputBorderWidth:2px;
+$inputFocusBorderStyle:solid;
+$inputFocusBorderColor:#dd3333;
+$inputFocusBorderWidth:2px;
+$inputColor:#1e3042;
+$inputFocusColor:#1e3042;
+$inputPadding:15px;
+$inputTextAlign:left;
+$inputTextSize:20px;
+$inputTextLineHeight:1.5;
+
+
+/* Formular Felder - Weiter / Submit Button */ 
+$btnBg:#dd3333;
+$btnHoverBg:#217fdb;
+$btnBorderStyle:solid;
+$btnBorderColor:#dd3333;
+$btnBorderWidth:0;
+$btnHoverBorderStyle:solid;
+$btnHoverBorderColor:#217fdb;
+$btnHoverBorderWidth:0;
+$btnColor:#ffffff;
+$btnHoverColor:#ffffff;
+$btnPadding:15px;
+$btnTextAlign:center;
+$btnTextSize: calc(20px * 1.5) ;
+$btnTextFontWeight:700;
+
+
+/* Formularfelder - Checkbox DSGVO */ 
+$checkboxDsgvoBg:#1e73be;
+$checkboxDsgvoBorderStyle:solid;
+$checkboxDsgvoBorderColor:#dedede;
+$checkboxDsgvoBorderWidth:2px;
+$checkboxDsgvoActiveBorderStyle:dotted;
+$checkboxDsgvoActiveBorderColor:#dd3333;
+$checkboxDsgvoActiveBorderWidth:1px;
+$checkboxDsgvoColor:#161616;
+$checkboxDsgvoActiveColor:#ffffff;
